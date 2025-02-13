@@ -14,9 +14,10 @@ function App() {
         <Route path="/users"
               element={<UserList/>}/>
         <Route path="*"
-              element={
-              <div>
-              Sorry - that page doesn't exist
+              element={<div>
+              Sorry - that page doesn't exist, try:
+                <button><a href="http://localhost:5173/posts">Link to Posts</a></button> 
+                <button><a href="http://localhost:5173/users">Link to Users</a></button>
               </div>}/>
       </Routes>
       

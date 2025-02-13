@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 
-type Post = {
+type Post = [
     id: number,
     message: string,
     imageUrl: string,
     createdAt: string,
-    userId: number; 
-}
+    userId: number 
+]
 
 type User = {
     id: number,
@@ -31,6 +31,7 @@ function UserList() {
     }, []);
 
     if (!userListData) {
+        //add a more useful error message that checks 200 status
         return <div>Waiting for user data!</div>
         }
     else {

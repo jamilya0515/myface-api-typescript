@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+
 type User = {
     id: number,
     name: string,
@@ -31,15 +32,16 @@ function PostList() {
     }, []);
 
     if (!postListData) {
+        //add a more useful error message that checks 200 status
         return <div>Waiting for data!</div>
         }
     else {
         return <div>
-            {postListData?.results[0].postedBy.name}
+        <h1>This is the post page</h1> 
+        {postListData?.results[0].postedBy.email}
         </div>
-    } 
+        } 
 }
 
 export default PostList;
-
 
