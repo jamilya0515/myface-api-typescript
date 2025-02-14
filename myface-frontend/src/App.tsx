@@ -1,6 +1,6 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import './App.css';
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import './App.scss';
 import PostList from './Components/PostList';
 import UserList from './Components/UserList';
 
@@ -15,12 +15,13 @@ function App() {
               element={<UserList/>}/>
         <Route path="*"
               element={<div>
-              Sorry - that page doesn't exist, try:
-                <button><a href="http://localhost:5173/posts">Link to Posts</a></button> 
-                <button><a href="http://localhost:5173/users">Link to Users</a></button>
-              </div>}/>
-      </Routes>
-      
+              <h2>Sorry - that page doesn't exist, try:</h2>
+                <div >
+                  <button><Link to="/posts">Link to Posts</Link></button>
+                  <button><Link to="/users">Link to Users</Link></button>
+                </div>
+              </div>}/>     
+      </Routes>  
     </BrowserRouter>
   </>
 )
